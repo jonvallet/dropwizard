@@ -1,4 +1,16 @@
-apply plugin: 'java'
+plugins {
+  id 'java' // or 'groovy' Must be explicitly applied
+  id 'com.github.johnrengelman.shadow' version '1.2.3'
+}
+
+repositories {
+  jcenter()
+  mavenCentral()
+}
+
+apply plugin: 'application'
+
+mainClassName = "com.jonvallet.dropwizard.HelloWorldApplication"
 
 dependencies {
   compile 'io.dropwizard:dropwizard-core:0.9.2'
